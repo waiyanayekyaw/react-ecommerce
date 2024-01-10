@@ -1,26 +1,26 @@
-.loginsignup{
+.signup{
     width: 100%;
     height: 90vh;
     background-color: #fce3fe;
     padding: 80px 0;
 }
-.loginsignup-container{
+.signup-container{
     width: 550px;
     height: 600px;
     background-color: white;
     padding: 40px 60px;
     margin: auto;
 }
-.loginsignup-container h1{
+.signup-container h1{
     margin: 20px 0;
 }
-.loginsignup-forms{
+.signup-forms{
     display: flex;
     flex-direction: column;
     gap: 25px;
     margin-top: 30px;
 }
-.loginsignup-forms input{
+.signup-forms input{
     width: 100%;
     height: 70px;
     color: #5c5c5c;
@@ -29,7 +29,7 @@
     outline: none;
     font-size: 18px;
 }
-.loginsignup-container button{
+.signup-container button{
     width: 580px;
     height: 70px;
     color: white;
@@ -40,19 +40,19 @@
     font-weight: 500;
     cursor: pointer;
 }
-.loginsignup-login{
+.signup-login{
     color: #5c5c5c;
     font-size: 18px;
     font-weight: 500;
     margin-top: 20px;
 }
-.loginsignup span{
+.signup span{
     color: #ff4141;
     font-weight: 600;
     margin-left: 20px;
     cursor: pointer;
 }
-.loginsignup-agree{
+.signup-agree{
     color: #5c5c5c;
     font-size: 18px;
     font-weight: 500;
@@ -60,4 +60,42 @@
     align-items: center;
     margin-top: 25px;
     gap: 20px;
+}
+
+@media screen and (max-width:600px) {
+    .signup{
+        width: 80%;
+        height: auto;
+        background-color: white;
+        padding: 10px 0;
+        margin: auto;
+        margin-bottom: 60px;
+    }
+    .signup-container{
+        width: 400px;
+        height: 450px;
+        padding: 10px 20px;
+        margin: auto;
+    }
+    .signup-container input{
+        width: 300px;
+        height: 50px;
+        font-size: 16px;
+    }
+    .signup-container button{
+        width: 320px;
+        height: 50px;
+        font-size: 18px;
+    }
+    .signup-login{
+        font-size: 12px;
+    }
+    .signup-agree input{
+        width: 15px;
+        height: 15px;
+    }
+    .signup-agree{
+        font-size: 12px;
+        gap: 10px;
+    }
 }

@@ -21,3 +21,13 @@
     margin-top: 50px;
     gap: 30px;
 }
+
+@media screen and (max-width:600px) {
+    .new-collections h1{
+        font-size: 35px;
+    }
+    .collections{
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+}

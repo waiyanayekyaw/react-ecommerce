@@ -55,7 +55,7 @@ export default function Cart() {
                             <div className="cart-items">
                                 <img src={item.image} className="cart-items-img" alt="" />
                                 <p>{item.name}</p>
-                                <p>${item.new_price}</p>
+                                <p className="cart-items-price">${item.new_price}</p>
 
                                 <div className="cart-items-quantity">
                                     <img onClick={() => subtractQty(item)} src={minus} alt="" />
@@ -63,7 +63,7 @@ export default function Cart() {
                                     <img onClick={() => addQty(item)} src={plus} alt="" />
                                 </div>
 
-                                <p>${item.new_price * item.qty}</p>
+                                <p className="cart-items-total">${item.new_price * item.qty}</p>
                                 <img
                                     src={remove}
                                     onClick={() => removeFromCart(item)}

@@ -77,3 +77,17 @@
     outline: none;
     cursor: pointer;
 }
+
+@media screen and (max-width:600px) {
+    .product-detail{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .product-detail-img-lists img{
+        height: 100px;
+    }
+    .product-detail-main-img img{
+        height: 330px;
+    }
+}

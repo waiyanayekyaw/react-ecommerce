@@ -101,3 +101,34 @@ ul{
 .empty-cart img{
     opacity: .5;
 }
+
+@media screen and (max-width:600px) {
+    .cart{
+        margin: 50px 20px;
+    }
+    .cart-format{
+        display: grid;
+        grid-template-columns: 0.5fr 1fr 0.5fr 0.5fr 0.5fr 0.5fr;
+        font-size: 14px;
+        gap: 10px;
+    }
+    .cart-items{
+        display: grid;
+        grid-template-columns: 0.5fr 1fr 0.5fr 0.5fr 0.5fr 0.5fr;
+        font-size: 12px;
+        gap: 20px;
+    }
+    .cart-items-quantity{
+        flex-direction: column;
+        padding-left: 30px;
+    }
+    .cart-items-price{
+        padding-left: 10px;
+    }
+    .cart-items-total{
+        padding-left: 10px;
+    }
+    .cart-checkout{
+        grid-template-columns: 1fr;
+    }
+}

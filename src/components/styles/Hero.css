@@ -43,3 +43,17 @@
     align-items: center;
     overflow: hidden;
 }
+
+@media screen and (max-width:600px) {
+    .hero-left{
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 30px;
+    }
+    .hero-left p{
+        font-size: 70px;
+    }
+    .hero-right{
+        display: none;
+    }
+}

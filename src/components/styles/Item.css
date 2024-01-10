@@ -1,15 +1,24 @@
 .item{
-    width: 350px;
+    width: 90%;
+    max-width: 350px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.item img{
+    width: 100%;
+    height: auto;
+    cursor: pointer;
 }
 .item p{
     margin: 6px 0px;
 }
 .item-prices{
     display: flex;
-    gap: 20px;
+    justify-content: space-between;
+    margin: 0 10px;
 }
 .item-new-price{
-    color: #374151;
+    color: #ff4141;
     font-size: 18px;
     font-weight: 600;
 }
@@ -22,4 +31,10 @@
 .item:hover{
     transform: scale(1.05);
     transition: 0.6s;
+}
+
+@media screen and (max-width:600px) {
+    .item{
+        max-width: 70%;
+    }
 }

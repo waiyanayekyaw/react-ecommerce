@@ -47,3 +47,23 @@
     font-size: 16px;
     cursor: pointer;
 }
+
+@media screen and (max-width:600px) {
+    .subscribe{
+        width: 100%;
+        padding: 0;
+    }
+    .subscribe h1{
+        font-size: 25px;
+    }
+    .subscribe p{
+        font-size: 18px;
+    }
+    .subscribe div{
+        width: 80%;
+        height: 50px;
+    }
+    .subscribe button{
+        height: 50px;
+    }
+}
