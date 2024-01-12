@@ -3,14 +3,16 @@ import "./Layout.css";
 import { useState } from "react";
 import logo from "../../assets/logo.png";
 import cart from "../../assets/cart_icon.png";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Footer from "../../components/Footer";
 import { ShopContext } from "../../contexts/ShopContext";
+import { SwitchTransition, CSSTransition } from "react-transition-group";
 
 export default function Layout() {
     const { state } = useContext(ShopContext);
     const [menu, setMenu] = useState("shop");
     let navigate = useNavigate();
+    let location = useLocation();
 
     return (
         <>
@@ -81,7 +83,12 @@ export default function Layout() {
                 </div>
             </div>
 
-            <Outlet />
+            <SwitchTransition>
+                <CSSTransition timeout={200} classNames="fade" key={location.pathname}>
+                    <Outlet />
+                </CSSTransition>
+            </SwitchTransition>
+
             <Footer />
         </>
     );
