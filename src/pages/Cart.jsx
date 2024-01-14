@@ -5,6 +5,7 @@ import remove from "../assets/cart_cross_icon.png";
 import plus from "../assets/plus.svg";
 import minus from "../assets/minus.svg";
 import empty_cart from "../assets/empty_cart.png";
+import CheckOut from "../components/CheckOut";
 
 export default function Cart() {
     const { state, removeFromCart } = useContext(ShopContext);
@@ -74,29 +75,7 @@ export default function Cart() {
                             <hr />
                         </ul>
                     ))}
-                    <div className="cart-checkout">
-                        <div></div>
-
-                        <div>
-                            <h2>Cart Totals</h2>
-                            <div className="subtotal">
-                                <p>Subtotal</p>
-                                <p>${totalAmount}</p>
-                            </div>
-                            <hr />
-                            <div className="shipping-fee">
-                                <p>Shipping Fee</p>
-                                <p>Free</p>
-                            </div>
-                            <hr />
-                            <div className="total">
-                                <p>Total</p>
-                                <p>${totalAmount}</p>
-                            </div>
-
-                            <button className="check-btn">CHECKOUT</button>
-                        </div>
-                    </div>
+                    <CheckOut totalAmount={totalAmount} />
                 </>
             )}
         </div>

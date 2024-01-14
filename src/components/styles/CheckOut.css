@@ -1,0 +1,11 @@
+.cart-checkout{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+@media screen and (max-width:600px) {
+    .cart-checkout{
+        grid-template-columns: 1fr;
+    }
+}

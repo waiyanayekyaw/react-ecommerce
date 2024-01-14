@@ -57,41 +57,7 @@ ul{
     margin: 0 40px;
     cursor: pointer;
 }
-.cart-checkout{
-    margin-top: 50px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-.cart-checkout h2{
-    margin-bottom: 20px;
-}
-.cart-checkout hr{
-    margin: 10px 0;
-}
-.subtotal{
-    display: flex;
-    justify-content: space-between;
-}
-.shipping-fee{
-    display: flex;
-    justify-content: space-between;
-}
-.total{
-    display: flex;
-    justify-content: space-between;
-}
-.total p{
-    font-weight: bold;
-}
-.check-btn{
-    padding: 10px 20px;
-    margin-top: 30px;
-    color: white;
-    background-color: #ff4141;
-    border: none;
-    float: right;
-    cursor: pointer;
-}
+
 .empty-cart{
     display: flex;
     flex-direction: column;
@@ -127,8 +93,5 @@ ul{
     }
     .cart-items-total{
         padding-left: 10px;
-    }
-    .cart-checkout{
-        grid-template-columns: 1fr;
     }
 }
