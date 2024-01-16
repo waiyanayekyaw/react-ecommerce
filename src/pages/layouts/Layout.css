@@ -3,6 +3,9 @@
     justify-content: space-around;
     align-items: center;
   }
+  .navbar-menu{
+    display: none;
+  }
   .nav-logo{
     display: flex;
     align-items: center;
@@ -11,7 +14,13 @@
   }
   .nav-list{
     display: flex;
-    list-style: none;
+    gap: 35px;
+  }
+  .nav-list-items{
+    display: flex;
+    align-items: center;
+    margin-left: -100px;
+    margin-right: 100px;
     gap: 35px;
   }
   .nav-list li{
@@ -30,12 +39,13 @@
     gap: 40px;
   }
   .login-btn{
-    background-color: whitesmoke;
+    color: white;
+    background-color: #ff4141;
     padding: 12px 30px;
+    border: none;
+    outline: 0;
     border-radius: 25px;
     cursor: pointer;
-    outline: none;
-    border: 1px solid #7a7a7a;
   }
   .login-btn:active{
     background-color: #cdcdcd;
@@ -82,15 +92,29 @@
       margin-left: 20px;
       margin-bottom: 10px;
     }
+    .navbar-menu{
+      display: flex;
+      align-self: flex-end;
+      cursor: pointer;
+
+      position: absolute;
+      top: 25px;
+      right: 25px;
+    }
     .nav-logo{
       gap: 10px;
     }
     .nav-list{
+      display: none;
       flex-direction: column;
       margin-top: 10px;
       margin-bottom: 20px;
     }
-    .nav-list li {
-      margin-right: 0;
+    .nav-list.show{
+      display: flex;
+      flex-direction: column;
+    }
+    .nav-list-items{
+      margin: 0;
     }
   }

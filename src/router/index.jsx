@@ -7,6 +7,7 @@ import Cart from "../pages/Cart.jsx";
 import Login from "../pages/Login.jsx";
 import Signup from "../pages/Signup.jsx";
 import Order from "../pages/Order.jsx";
+import Dashboard from "../admin/Dashboard.jsx";
 import men_banner from "../assets/banner_mens.png";
 import women_banner from "../assets/banner_women.png";
 import kids_banner from "../assets/banner_kids.png";
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
             {
                 path: "/order",
                 element: <Order />,
+            },
+            {
+                path: "/admin",
+                element: <Dashboard />,
             },
         ],
     },

@@ -1,9 +1,11 @@
 .total-amount{
     display: grid;
     grid-template-columns: 1fr;
+    padding: 20px;
 }
 .total-amount h2{
     margin-bottom: 20px;
+    font-weight: 600;
 }
 .total-amount hr{
     margin: 10px 0;

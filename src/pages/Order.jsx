@@ -36,7 +36,7 @@ export default function Order() {
                         <textarea name="" id="" cols="50" rows="3"></textarea>
                     </div>
 
-                    <button>Order</button>
+                    <button>Place Order</button>
                 </form>
             </div>
         </div>

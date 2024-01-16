@@ -3,6 +3,7 @@
     margin: 50px 150px;
 }
 .product-detail-left{
+    width: 2000px;
     display: flex;
     gap: 15px;
 }
@@ -83,6 +84,11 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+    .product-detail-left{
+        width: 450px;
+        justify-content: center;
+        margin-bottom: 15px;
     }
     .product-detail-img-lists img{
         height: 100px;
