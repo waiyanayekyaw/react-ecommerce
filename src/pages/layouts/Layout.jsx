@@ -8,6 +8,8 @@ import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Footer from "../../components/Footer";
 import { ShopContext } from "../../contexts/ShopContext";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
+import { useLogout } from "../../hooks/useLogout";
+import { AuthContext } from "../../contexts/AuthContext";
 
 export default function Layout() {
     const { state } = useContext(ShopContext);
@@ -15,10 +17,19 @@ export default function Layout() {
     let navigate = useNavigate();
     let location = useLocation();
 
+    let { user } = useContext(AuthContext);
+
     const [isNavOpen, setIsNavOpen] = useState(false);
 
     const toggleNavbar = () => {
         setIsNavOpen(!isNavOpen);
+    };
+
+    let { logout } = useLogout();
+
+    const logoutUser = async () => {
+        await logout();
+        // console.log("hit");
     };
 
     return (
@@ -71,14 +82,22 @@ export default function Layout() {
                     </ul>
 
                     <div className="nav-button">
-                        <button
-                            onClick={() => {
-                                navigate("/login");
-                            }}
-                            className="login-btn"
-                        >
-                            Login
-                        </button>
+                        {!user && (
+                            <button
+                                onClick={() => {
+                                    navigate("/login");
+                                }}
+                                className="login-btn"
+                            >
+                                Login
+                            </button>
+                        )}
+
+                        {user && (
+                            <button onClick={logoutUser} className="logout-btn">
+                                Logout
+                            </button>
+                        )}
 
                         <img
                             onClick={() => {

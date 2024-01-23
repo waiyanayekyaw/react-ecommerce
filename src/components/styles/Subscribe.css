@@ -1,13 +1,12 @@
 .subscribe{
     width: 65%;
-    height: 40vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: auto;
-    padding: 0 140px;
-    margin-bottom: 150px;
+    padding: 50px 140px;
+    margin-bottom: 130px;
     background: linear-gradient(180deg,#fde1ff,#e1ffea22 60%);
     gap: 30px;
 }

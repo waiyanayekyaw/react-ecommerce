@@ -6,7 +6,6 @@
 }
 .signup-container{
     width: 550px;
-    height: 600px;
     background-color: white;
     padding: 40px 60px;
     margin: auto;
@@ -34,7 +33,6 @@
     height: 70px;
     color: white;
     background-color: #ff4141;
-    margin-top: 30px;
     border: none;
     font-size: 24px;
     font-weight: 500;

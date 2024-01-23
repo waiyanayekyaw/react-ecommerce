@@ -1,5 +1,5 @@
 import App from "../App.jsx";
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom";
 import Shop from "../pages/Shop.jsx";
 import ShopCategory from "../pages/ShopCategory.jsx";
 import ProductDetail from "../pages/ProductDetail.jsx";
@@ -11,54 +11,73 @@ import Dashboard from "../admin/Dashboard.jsx";
 import men_banner from "../assets/banner_mens.png";
 import women_banner from "../assets/banner_women.png";
 import kids_banner from "../assets/banner_kids.png";
+import { useContext } from "react";
+import { AuthContext } from "../contexts/AuthContext.jsx";
 
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <App />,
-        children: [
-            {
-                path: "/",
-                element: <Shop />,
-            },
-            {
-                path: "/men",
-                element: <ShopCategory banner={men_banner} category="men" />,
-            },
-            {
-                path: "/women",
-                element: <ShopCategory banner={women_banner} category="women" />,
-            },
-            {
-                path: "/kids",
-                element: <ShopCategory banner={kids_banner} category="kid" />,
-            },
-            {
-                path: "/product/:productId",
-                element: <ProductDetail />,
-            },
-            {
-                path: "/cart",
-                element: <Cart />,
-            },
-            {
-                path: "/login",
-                element: <Login />,
-            },
-            {
-                path: "/signup",
-                element: <Signup />,
-            },
-            {
-                path: "/order",
-                element: <Order />,
-            },
-            {
-                path: "/admin",
-                element: <Dashboard />,
-            },
-        ],
-    },
-]);
+export default function index() {
+    let { authReady, user } = useContext(AuthContext);
+    const isAuthenticated = !!user;
 
-export default router;
+    const router = createBrowserRouter([
+        {
+            path: "/",
+            element: <App />,
+            children: [
+                {
+                    path: "/",
+                    element: isAuthenticated ? <Shop /> : <Navigate to={"/login"} />,
+                },
+                {
+                    path: "/men",
+                    element: isAuthenticated ? (
+                        <ShopCategory banner={men_banner} category="men" />
+                    ) : (
+                        <Navigate to={"/login"} />
+                    ),
+                },
+                {
+                    path: "/women",
+                    element: isAuthenticated ? (
+                        <ShopCategory banner={women_banner} category="women" />
+                    ) : (
+                        <Navigate to={"/login"} />
+                    ),
+                },
+                {
+                    path: "/kids",
+                    element: isAuthenticated ? (
+                        <ShopCategory banner={kids_banner} category="kid" />
+                    ) : (
+                        <Navigate to={"/login"} />
+                    ),
+                },
+                {
+                    path: "/product/:productId",
+                    element: isAuthenticated ? <ProductDetail /> : <Navigate to={"/login"} />,
+                },
+                {
+                    path: "/cart",
+                    element: isAuthenticated ? <Cart /> : <Navigate to={"/login"} />,
+                },
+                {
+                    path: "/login",
+                    element: !isAuthenticated ? <Login /> : <Navigate to={"/"} />,
+                },
+                {
+                    path: "/signup",
+                    element: !isAuthenticated ? <Signup /> : <Navigate to={"/"} />,
+                },
+                {
+                    path: "/order",
+                    element: isAuthenticated ? <Order /> : <Navigate to={"/login"} />,
+                },
+                {
+                    path: "/admin",
+                    element: isAuthenticated ? <Dashboard /> : <Navigate to={"/login"} />,
+                },
+            ],
+        },
+    ]);
+
+    return authReady && <RouterProvider router={router} />;
+}
